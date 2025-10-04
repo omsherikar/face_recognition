@@ -24,11 +24,10 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            color: #2c3e50;
+            background: #ffffff;
         }
         
         .container {
@@ -39,9 +38,8 @@
         
         /* Header */
         .header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background: #ffffff;
+            border-bottom: 1px solid #e1e8ed;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -55,9 +53,9 @@
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
             text-decoration: none;
         }
         
@@ -69,32 +67,37 @@
         
         .nav-links a {
             text-decoration: none;
-            color: #2c3e50;
+            color: #4a5568;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
         
         .nav-links a:hover {
-            color: #3498db;
+            color: #2b6cb0;
         }
         
         /* Hero Section */
         .hero {
             text-align: center;
             padding: 4rem 0;
-            color: white;
+            background: #f7fafc;
+            border-bottom: 1px solid #e1e8ed;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #1a365d;
+            font-weight: 700;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: #4a5568;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-buttons {
@@ -106,54 +109,60 @@
         
         .btn {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            padding: 0.75rem 1.5rem;
+            background: #2b6cb0;
             color: white;
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+            background: #2c5282;
         }
         
         .btn-secondary {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            background: #ffffff;
+            color: #2b6cb0;
+            border: 1px solid #2b6cb0;
         }
         
         .btn-secondary:hover {
-            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+            background: #2b6cb0;
+            color: white;
         }
         
         /* Main Content */
         .main-content {
             background: white;
-            margin: 2rem 0;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
+            margin: 0;
         }
         
         .section {
-            padding: 3rem 2rem;
+            padding: 3rem 0;
+            border-bottom: 1px solid #e1e8ed;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
         }
         
         .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1a365d;
             text-align: center;
+            font-weight: 600;
         }
         
         .section h3 {
-            font-size: 1.8rem;
+            font-size: 1.25rem;
             margin-bottom: 1rem;
-            color: #34495e;
+            color: #2d3748;
+            font-weight: 600;
         }
         
         /* Features Grid */
@@ -165,57 +174,61 @@
         }
         
         .feature-card {
-            background: #f8f9fa;
+            background: #ffffff;
             padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-left: 4px solid #3498db;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            text-align: left;
+            transition: box-shadow 0.2s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         .feature-icon {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
+            color: #2b6cb0;
         }
         
         .feature-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #1a365d;
+            font-weight: 600;
         }
         
         /* Installation Steps */
         .install-steps {
-            background: #f8f9fa;
+            background: #f7fafc;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 8px;
             margin: 2rem 0;
+            border: 1px solid #e1e8ed;
         }
         
         .step {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: 1.5rem;
-            padding: 1rem;
+            padding: 1.5rem;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border: 1px solid #e1e8ed;
         }
         
         .step-number {
-            background: #3498db;
+            background: #2b6cb0;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.9rem;
             margin-right: 1rem;
             flex-shrink: 0;
         }
@@ -226,17 +239,19 @@
         
         .step-content h4 {
             margin-bottom: 0.5rem;
-            color: #2c3e50;
+            color: #1a365d;
+            font-weight: 600;
         }
         
         .code-block {
-            background: #2c3e50;
-            color: #ecf0f1;
+            background: #1a202c;
+            color: #e2e8f0;
             padding: 1rem;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
+            border-radius: 6px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
             margin: 1rem 0;
             overflow-x: auto;
+            font-size: 0.9rem;
         }
         
         .code-block code {
@@ -246,52 +261,53 @@
         
         /* API Documentation */
         .api-section {
-            background: #f8f9fa;
+            background: #f7fafc;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 8px;
             margin: 2rem 0;
+            border: 1px solid #e1e8ed;
         }
         
         .endpoint {
             background: white;
             padding: 1.5rem;
-            border-radius: 10px;
+            border-radius: 8px;
             margin-bottom: 1rem;
-            border-left: 4px solid #27ae60;
+            border: 1px solid #e1e8ed;
         }
         
         .endpoint-method {
             display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
             margin-right: 1rem;
         }
         
         .method-post {
-            background: #3498db;
+            background: #2b6cb0;
             color: white;
         }
         
         .method-get {
-            background: #27ae60;
+            background: #38a169;
             color: white;
         }
         
         .endpoint-url {
-            font-family: 'Courier New', monospace;
-            font-weight: bold;
-            color: #2c3e50;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-weight: 600;
+            color: #1a365d;
         }
         
         /* Footer */
         .footer {
-            background: #2c3e50;
-            color: white;
+            background: #1a365d;
+            color: #e2e8f0;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
+            padding: 3rem 0;
+            margin-top: 0;
         }
         
         .footer-content {
@@ -303,19 +319,20 @@
         
         .footer-section h4 {
             margin-bottom: 1rem;
-            color: #3498db;
+            color: #ffffff;
+            font-weight: 600;
         }
         
         .footer-section a {
-            color: #bdc3c7;
+            color: #a0aec0;
             text-decoration: none;
             display: block;
             margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
+            transition: color 0.2s ease;
         }
         
         .footer-section a:hover {
-            color: #3498db;
+            color: #ffffff;
         }
         
         .social-links {
@@ -329,18 +346,18 @@
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: #3498db;
+            background: #2b6cb0;
             color: white;
-            border-radius: 50%;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            transition: transform 0.3s ease;
+            transition: background-color 0.2s ease;
         }
         
         .social-links a:hover {
-            transform: scale(1.1);
+            background: #2c5282;
         }
         
         /* Responsive Design */
@@ -384,7 +401,7 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav container">
-            <a href="#" class="logo">🏥 Healthcare FR</a>
+            <a href="#" class="logo">Healthcare Face Recognition</a>
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#installation">Installation</a></li>
@@ -401,8 +418,8 @@
             <h1 class="fade-in-up">Healthcare Face Recognition System</h1>
             <p class="fade-in-up">Secure, privacy-preserving face recognition for healthcare environments with AI-powered genetic screening and bias detection</p>
             <div class="cta-buttons fade-in-up">
-                <a href="https://github.com/omsherikar/face_recognition/archive/main.zip" class="btn">📥 Download Now</a>
-                <a href="https://github.com/omsherikar/face_recognition" class="btn btn-secondary">⭐ Star on GitHub</a>
+                <a href="https://github.com/omsherikar/face_recognition/archive/main.zip" class="btn">Download Now</a>
+                <a href="https://github.com/omsherikar/face_recognition" class="btn btn-secondary">View on GitHub</a>
             </div>
         </div>
     </section>
@@ -412,35 +429,35 @@
         <div class="container">
             <!-- Features Section -->
             <section id="features" class="section">
-                <h2>🚀 Key Features</h2>
+                <h2>Key Features</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🔐</div>
+                        <div class="feature-icon">Security</div>
                         <h4>Secure Patient Registration</h4>
                         <p>Encrypted facial data storage with AES-256 encryption and HIPAA/GDPR compliance</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔍</div>
+                        <div class="feature-icon">Identification</div>
                         <h4>Real-time Identification</h4>
                         <p>Fast and accurate patient identification with confidence scoring and anti-spoofing protection</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🧬</div>
+                        <div class="feature-icon">AI Analysis</div>
                         <h4>AI Genetic Screening</h4>
                         <p>Pre-screening for genetic disorders using advanced AI models and facial feature analysis</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">⚖️</div>
+                        <div class="feature-icon">Fairness</div>
                         <h4>Bias Detection</h4>
                         <p>Comprehensive fairness monitoring and bias correction across all demographic groups</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📋</div>
+                        <div class="feature-icon">Compliance</div>
                         <h4>Consent Management</h4>
                         <p>Granular consent tracking and management for different data usage scenarios</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-icon">Protection</div>
                         <h4>Anti-spoofing Security</h4>
                         <p>Advanced liveness detection and multi-factor authentication to prevent fraud</p>
                     </div>
@@ -449,7 +466,7 @@
 
             <!-- Installation Section -->
             <section id="installation" class="section">
-                <h2>📦 Installation & Setup</h2>
+                <h2>Installation & Setup</h2>
                 <div class="install-steps">
                     <div class="step">
                         <div class="step-number">1</div>
@@ -494,7 +511,7 @@ python3 main.py</code>
 
             <!-- API Documentation -->
             <section id="api" class="section">
-                <h2>🔌 API Documentation</h2>
+                <h2>API Documentation</h2>
                 <div class="api-section">
                     <h3>Core Endpoints</h3>
                     
@@ -532,7 +549,7 @@ python3 main.py</code>
 
             <!-- Quick Start Example -->
             <section class="section">
-                <h2>🚀 Quick Start Example</h2>
+                <h2>Quick Start Example</h2>
                 <div class="code-block">
                     <code># Register a patient
 curl -X POST http://localhost:8001/register-patient \
@@ -554,25 +571,25 @@ curl -X POST http://localhost:8001/identify-patient \
 
             <!-- System Requirements -->
             <section class="section">
-                <h2>💻 System Requirements</h2>
+                <h2> System Requirements</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🐍</div>
+                        <div class="feature-icon"></div>
                         <h4>Python 3.8+</h4>
                         <p>Required for running the application and all dependencies</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">💾</div>
+                        <div class="feature-icon"></div>
                         <h4>4GB RAM</h4>
                         <p>Minimum recommended memory for optimal performance</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📷</div>
+                        <div class="feature-icon"></div>
                         <h4>Camera Support</h4>
                         <p>Webcam or camera for real-time face capture and processing</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
+                        <div class="feature-icon"></div>
                         <h4>Secure Environment</h4>
                         <p>HIPAA-compliant infrastructure for healthcare deployment</p>
                     </div>
@@ -590,21 +607,21 @@ curl -X POST http://localhost:8001/identify-patient \
                     <p>Secure, privacy-preserving face recognition system designed specifically for healthcare environments.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>📚 Resources</h4>
+                    <h4> Resources</h4>
                     <a href="https://github.com/omsherikar/face_recognition/blob/main/README.md">Documentation</a>
                     <a href="https://github.com/omsherikar/face_recognition/blob/main/PROJECT_OVERVIEW.md">Project Overview</a>
                     <a href="https://github.com/omsherikar/face_recognition/blob/main/TEST_RESULTS.md">Test Results</a>
                     <a href="https://github.com/omsherikar/face_recognition/issues">Report Issues</a>
                 </div>
                 <div class="footer-section">
-                    <h4>🔗 Links</h4>
+                    <h4> Links</h4>
                     <a href="https://github.com/omsherikar/face_recognition">GitHub Repository</a>
                     <a href="https://github.com/omsherikar/face_recognition/releases">Releases</a>
                     <a href="https://github.com/omsherikar/face_recognition/blob/main/LICENSE">License</a>
                     <a href="https://github.com/omsherikar">Developer</a>
                 </div>
                 <div class="footer-section">
-                    <h4>📞 Support</h4>
+                    <h4> Support</h4>
                     <p>For technical support and questions:</p>
                     <a href="https://github.com/omsherikar/face_recognition/issues">GitHub Issues</a>
                     <a href="https://github.com/omsherikar">Contact Developer</a>
@@ -612,8 +629,8 @@ curl -X POST http://localhost:8001/identify-patient \
             </div>
             
             <div class="social-links">
-                <a href="https://github.com/omsherikar/face_recognition" title="GitHub">📁</a>
-                <a href="https://github.com/omsherikar" title="Developer">👨‍💻</a>
+                <a href="https://github.com/omsherikar/face_recognition" title="GitHub"></a>
+                <a href="https://github.com/omsherikar" title="Developer"></a>
             </div>
             
             <p style="margin-top: 2rem; opacity: 0.7;">
