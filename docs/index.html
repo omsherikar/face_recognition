@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Face Recognition System</title>
+    <meta name="description" content="Secure, privacy-preserving face recognition system for healthcare environments with AI-powered genetic screening and bias detection.">
+    <meta name="keywords" content="face recognition, healthcare, AI, genetic screening, privacy, HIPAA, GDPR, bias detection">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Healthcare Face Recognition System">
+    <meta property="og:description" content="Secure, privacy-preserving face recognition for healthcare with AI genetic screening">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://omsherikar.github.io/face_recognition/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.6);
+        }
+        
+        .btn-secondary {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+        }
+        
+        .btn-secondary:hover {
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+        }
+        
+        /* Main Content */
+        .main-content {
+            background: white;
+            margin: 2rem 0;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .section {
+            padding: 3rem 2rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        .section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #34495e;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        /* Installation Steps */
+        .install-steps {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .step-number {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-block code {
+            display: block;
+            white-space: pre-wrap;
+        }
+        
+        /* API Documentation */
+        .api-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+        }
+        
+        .endpoint {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #27ae60;
+        }
+        
+        .endpoint-method {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+        }
+        
+        .method-post {
+            background: #3498db;
+            color: white;
+        }
+        
+        .method-get {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .endpoint-url {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: #3498db;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">🏥 Healthcare FR</a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#documentation">Docs</a></li>
+                <li><a href="https://github.com/omsherikar/face_recognition" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in-up">Healthcare Face Recognition System</h1>
+            <p class="fade-in-up">Secure, privacy-preserving face recognition for healthcare environments with AI-powered genetic screening and bias detection</p>
+            <div class="cta-buttons fade-in-up">
+                <a href="https://github.com/omsherikar/face_recognition/archive/main.zip" class="btn">📥 Download Now</a>
+                <a href="https://github.com/omsherikar/face_recognition" class="btn btn-secondary">⭐ Star on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Features Section -->
+            <section id="features" class="section">
+                <h2>🚀 Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h4>Secure Patient Registration</h4>
+                        <p>Encrypted facial data storage with AES-256 encryption and HIPAA/GDPR compliance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h4>Real-time Identification</h4>
+                        <p>Fast and accurate patient identification with confidence scoring and anti-spoofing protection</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧬</div>
+                        <h4>AI Genetic Screening</h4>
+                        <p>Pre-screening for genetic disorders using advanced AI models and facial feature analysis</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚖️</div>
+                        <h4>Bias Detection</h4>
+                        <p>Comprehensive fairness monitoring and bias correction across all demographic groups</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h4>Consent Management</h4>
+                        <p>Granular consent tracking and management for different data usage scenarios</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h4>Anti-spoofing Security</h4>
+                        <p>Advanced liveness detection and multi-factor authentication to prevent fraud</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Installation Section -->
+            <section id="installation" class="section">
+                <h2>📦 Installation & Setup</h2>
+                <div class="install-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Clone the Repository</h4>
+                            <div class="code-block">
+                                <code>git clone https://github.com/omsherikar/face_recognition.git
+cd face_recognition</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Run the Installation Script</h4>
+                            <div class="code-block">
+                                <code>chmod +x install.sh
+./install.sh</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Start the Server</h4>
+                            <div class="code-block">
+                                <code>source venv/bin/activate
+python3 main.py</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Access the API</h4>
+                            <p>The system will be available at <strong>http://localhost:8001</strong></p>
+                            <p>API documentation: <strong>http://localhost:8001/docs</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Documentation -->
+            <section id="api" class="section">
+                <h2>🔌 API Documentation</h2>
+                <div class="api-section">
+                    <h3>Core Endpoints</h3>
+                    
+                    <div class="endpoint">
+                        <span class="endpoint-method method-post">POST</span>
+                        <span class="endpoint-url">/register-patient</span>
+                        <p>Register a new patient with facial data and medical information</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="endpoint-method method-post">POST</span>
+                        <span class="endpoint-url">/identify-patient</span>
+                        <p>Identify a patient from facial image with optional genetic screening</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="endpoint-method method-post">POST</span>
+                        <span class="endpoint-url">/update-consent</span>
+                        <p>Update patient consent for different data usage scenarios</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="endpoint-method method-get">GET</span>
+                        <span class="endpoint-url">/system-statistics</span>
+                        <p>Get comprehensive system statistics and monitoring data</p>
+                    </div>
+                    
+                    <div class="endpoint">
+                        <span class="endpoint-method method-get">GET</span>
+                        <span class="endpoint-url">/fairness-report</span>
+                        <p>Generate bias detection and fairness monitoring report</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start Example -->
+            <section class="section">
+                <h2>🚀 Quick Start Example</h2>
+                <div class="code-block">
+                    <code># Register a patient
+curl -X POST http://localhost:8001/register-patient \
+  -H "Authorization: Bearer your_token" \
+  -F "patient_id=P001" \
+  -F "name=John Doe" \
+  -F "date_of_birth=1990-01-15" \
+  -F "medical_record_number=MRN123456" \
+  -F "consent_given=true" \
+  -F "image=@patient_photo.jpg"
+
+# Identify a patient
+curl -X POST http://localhost:8001/identify-patient \
+  -H "Authorization: Bearer your_token" \
+  -F "image=@patient_photo.jpg" \
+  -F "session_id=checkin_001"</code>
+                </div>
+            </section>
+
+            <!-- System Requirements -->
+            <section class="section">
+                <h2>💻 System Requirements</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🐍</div>
+                        <h4>Python 3.8+</h4>
+                        <p>Required for running the application and all dependencies</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💾</div>
+                        <h4>4GB RAM</h4>
+                        <p>Minimum recommended memory for optimal performance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📷</div>
+                        <h4>Camera Support</h4>
+                        <p>Webcam or camera for real-time face capture and processing</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h4>Secure Environment</h4>
+                        <p>HIPAA-compliant infrastructure for healthcare deployment</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🏥 Healthcare FR</h4>
+                    <p>Secure, privacy-preserving face recognition system designed specifically for healthcare environments.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>📚 Resources</h4>
+                    <a href="https://github.com/omsherikar/face_recognition/blob/main/README.md">Documentation</a>
+                    <a href="https://github.com/omsherikar/face_recognition/blob/main/PROJECT_OVERVIEW.md">Project Overview</a>
+                    <a href="https://github.com/omsherikar/face_recognition/blob/main/TEST_RESULTS.md">Test Results</a>
+                    <a href="https://github.com/omsherikar/face_recognition/issues">Report Issues</a>
+                </div>
+                <div class="footer-section">
+                    <h4>🔗 Links</h4>
+                    <a href="https://github.com/omsherikar/face_recognition">GitHub Repository</a>
+                    <a href="https://github.com/omsherikar/face_recognition/releases">Releases</a>
+                    <a href="https://github.com/omsherikar/face_recognition/blob/main/LICENSE">License</a>
+                    <a href="https://github.com/omsherikar">Developer</a>
+                </div>
+                <div class="footer-section">
+                    <h4>📞 Support</h4>
+                    <p>For technical support and questions:</p>
+                    <a href="https://github.com/omsherikar/face_recognition/issues">GitHub Issues</a>
+                    <a href="https://github.com/omsherikar">Contact Developer</a>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://github.com/omsherikar/face_recognition" title="GitHub">📁</a>
+                <a href="https://github.com/omsherikar" title="Developer">👨‍💻</a>
+            </div>
+            
+            <p style="margin-top: 2rem; opacity: 0.7;">
+                © 2025 Healthcare Face Recognition System. Built with ❤️ for healthcare professionals.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation classes on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards and sections
+        document.querySelectorAll('.feature-card, .step, .endpoint').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

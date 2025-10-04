@@ -1,0 +1,89 @@
+# GitHub Pages Configuration for Healthcare Face Recognition System
+
+title: Healthcare Face Recognition System
+description: Secure, privacy-preserving face recognition for healthcare environments with AI-powered genetic screening and bias detection
+author: omsherikar
+email: your-email@example.com
+
+# GitHub Pages settings
+baseurl: "/face_recognition"
+url: "https://omsherikar.github.io"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Navigation
+navigation:
+  - title: Home
+    url: /
+  - title: Documentation
+    url: /documentation.html
+  - title: GitHub
+    url: https://github.com/omsherikar/face_recognition
+
+# Social links
+social:
+  github: omsherikar
+  twitter: your_twitter_handle
+
+# Repository information
+repository: omsherikar/face_recognition
+repository_url: https://github.com/omsherikar/face_recognition
+
+# SEO
+seo:
+  type: WebSite
+  name: Healthcare Face Recognition System
+  description: Secure, privacy-preserving face recognition for healthcare environments
+  url: https://omsherikar.github.io/face_recognition
+  image: /assets/logo.png
+
+# Analytics (uncomment and add your tracking ID)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include files
+include:
+  - _redirects
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "doc"

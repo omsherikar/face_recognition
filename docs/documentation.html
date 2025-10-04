@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Healthcare Face Recognition System</title>
+    <meta name="description" content="Comprehensive documentation for the Healthcare Face Recognition System including API reference, installation guide, and usage examples.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: #ecf0f1;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .sidebar {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar a {
+            text-decoration: none;
+            color: #7f8c8d;
+            transition: color 0.3s ease;
+        }
+        
+        .sidebar a:hover {
+            color: #3498db;
+        }
+        
+        .main-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            margin-bottom: 0.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .code-block::before {
+            content: attr(data-lang);
+            position: absolute;
+            top: 0.5rem;
+            right: 1rem;
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+        
+        .api-endpoint {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .endpoint-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .method-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+        }
+        
+        .method-post {
+            background: #3498db;
+            color: white;
+        }
+        
+        .method-get {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .method-put {
+            background: #f39c12;
+            color: white;
+        }
+        
+        .method-delete {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .endpoint-url {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .parameter-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        .parameter-table th,
+        .parameter-table td {
+            border: 1px solid #dee2e6;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .parameter-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        
+        .parameter-table td:first-child {
+            font-family: 'Courier New', monospace;
+            background: #f8f9fa;
+        }
+        
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .alert-info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        
+        .alert-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>📚 Documentation</h1>
+            <p>Comprehensive guide for the Healthcare Face Recognition System</p>
+        </div>
+    </header>
+
+    <nav class="nav">
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="index.html">🏠 Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#installation">Installation</a></li>
+                <li><a href="#api">API Reference</a></li>
+                <li><a href="#examples">Examples</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="content">
+            <aside class="sidebar">
+                <h3>📋 Table of Contents</h3>
+                <ul>
+                    <li><a href="#overview">System Overview</a></li>
+                    <li><a href="#architecture">Architecture</a></li>
+                    <li><a href="#installation">Installation Guide</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                    <li><a href="#api">API Reference</a></li>
+                    <li><a href="#authentication">Authentication</a></li>
+                    <li><a href="#examples">Usage Examples</a></li>
+                    <li><a href="#security">Security Features</a></li>
+                    <li><a href="#deployment">Deployment</a></li>
+                    <li><a href="#troubleshooting">Troubleshooting</a></li>
+                </ul>
+            </aside>
+
+            <main class="main-content">
+                <section id="overview" class="section">
+                    <h2>🏥 System Overview</h2>
+                    <p>The Healthcare Face Recognition System is a comprehensive, privacy-preserving solution designed specifically for healthcare environments. It provides secure patient identification, AI-powered genetic screening, and bias detection capabilities.</p>
+                    
+                    <h3>Key Components</h3>
+                    <ul class="feature-list">
+                        <li>Patient Identification System with encrypted facial data storage</li>
+                        <li>AI-powered genetic disorder pre-screening</li>
+                        <li>Comprehensive bias detection and fairness monitoring</li>
+                        <li>HIPAA/GDPR compliant consent management</li>
+                        <li>Advanced anti-spoofing security measures</li>
+                        <li>Real-time system monitoring and statistics</li>
+                    </ul>
+                </section>
+
+                <section id="architecture" class="section">
+                    <h2>🏗️ System Architecture</h2>
+                    <p>The system follows a modular, privacy-first architecture with the following components:</p>
+                    
+                    <div class="code-block" data-lang="Architecture">
+src/
+├── core/                    # Patient identification
+│   └── patient_identification.py
+├── privacy/                 # Encryption & consent
+│   ├── encryption.py
+│   └── consent_manager.py
+├── security/                # Anti-spoofing
+│   └── anti_spoofing.py
+├── genetic_screening/       # AI genetic analysis
+│   └── genetic_analyzer.py
+├── bias_detection/          # Fairness monitoring
+│   └── bias_monitor.py
+└── utils/                   # Face utilities
+    └── face_utils.py
+                    </div>
+                </section>
+
+                <section id="installation" class="section">
+                    <h2>📦 Installation Guide</h2>
+                    
+                    <h3>Prerequisites</h3>
+                    <ul>
+                        <li>Python 3.8 or higher</li>
+                        <li>4GB RAM minimum (8GB recommended)</li>
+                        <li>Camera/webcam for face capture</li>
+                        <li>Secure network environment</li>
+                    </ul>
+
+                    <h3>Quick Installation</h3>
+                    <div class="code-block" data-lang="bash">
+# Clone the repository
+git clone https://github.com/omsherikar/face_recognition.git
+cd face_recognition
+
+# Run the installation script
+chmod +x install.sh
+./install.sh
+
+# Start the server
+source venv/bin/activate
+python3 main.py
+                    </div>
+
+                    <div class="alert alert-info">
+                        <strong>Note:</strong> The installation script will automatically create a virtual environment, install all dependencies, and set up the necessary directories.
+                    </div>
+                </section>
+
+                <section id="configuration" class="section">
+                    <h2>⚙️ Configuration</h2>
+                    
+                    <p>The system uses environment variables for configuration. Create a <code>.env</code> file in the project root:</p>
+                    
+                    <div class="code-block" data-lang="env">
+# API Configuration
+API_HOST=0.0.0.0
+API_PORT=8001
+DEBUG_MODE=False
+LOG_LEVEL=INFO
+
+# Database Configuration
+DATABASE_URL=sqlite:///./data/encrypted_db/healthcare_fr.db
+REDIS_URL=redis://localhost:6379
+
+# Security Configuration
+ENCRYPTION_KEY=your_base64_encoded_key_here
+
+# System Configuration
+DATA_DIR=./data
+MODELS_DIR=./data/models
+                    </div>
+                </section>
+
+                <section id="api" class="section">
+                    <h2>🔌 API Reference</h2>
+                    
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <span class="method-badge method-post">POST</span>
+                            <span class="endpoint-url">/register-patient</span>
+                        </div>
+                        <p>Register a new patient with facial data and medical information.</p>
+                        
+                        <h4>Parameters</h4>
+                        <table class="parameter-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>patient_id</td>
+                                <td>string</td>
+                                <td>Yes</td>
+                                <td>Unique patient identifier</td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>string</td>
+                                <td>Yes</td>
+                                <td>Patient's full name</td>
+                            </tr>
+                            <tr>
+                                <td>date_of_birth</td>
+                                <td>string</td>
+                                <td>Yes</td>
+                                <td>Patient's date of birth (YYYY-MM-DD)</td>
+                            </tr>
+                            <tr>
+                                <td>medical_record_number</td>
+                                <td>string</td>
+                                <td>Yes</td>
+                                <td>Medical record number</td>
+                            </tr>
+                            <tr>
+                                <td>consent_given</td>
+                                <td>boolean</td>
+                                <td>No</td>
+                                <td>Whether patient has given consent</td>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>file</td>
+                                <td>Yes</td>
+                                <td>Patient's facial image (JPG, PNG, GIF)</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <span class="method-badge method-post">POST</span>
+                            <span class="endpoint-url">/identify-patient</span>
+                        </div>
+                        <p>Identify a patient from facial image with optional genetic screening.</p>
+                        
+                        <h4>Parameters</h4>
+                        <table class="parameter-table">
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>image</td>
+                                <td>file</td>
+                                <td>Yes</td>
+                                <td>Facial image for identification</td>
+                            </tr>
+                            <tr>
+                                <td>session_id</td>
+                                <td>string</td>
+                                <td>No</td>
+                                <td>Session identifier for tracking</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="api-endpoint">
+                        <div class="endpoint-header">
+                            <span class="method-badge method-get">GET</span>
+                            <span class="endpoint-url">/system-statistics</span>
+                        </div>
+                        <p>Get comprehensive system statistics and monitoring data.</p>
+                    </div>
+                </section>
+
+                <section id="authentication" class="section">
+                    <h2>🔐 Authentication</h2>
+                    
+                    <p>All API endpoints require authentication using Bearer tokens. Include the token in the Authorization header:</p>
+                    
+                    <div class="code-block" data-lang="bash">
+curl -H "Authorization: Bearer your_token_here" \
+     http://localhost:8001/system-statistics
+                    </div>
+                    
+                    <div class="alert alert-warning">
+                        <strong>Security Note:</strong> In production, use proper JWT tokens with expiration and validation. The current implementation uses placeholder authentication for demonstration purposes.
+                    </div>
+                </section>
+
+                <section id="examples" class="section">
+                    <h2>💡 Usage Examples</h2>
+                    
+                    <h3>Register a Patient</h3>
+                    <div class="code-block" data-lang="bash">
+curl -X POST http://localhost:8001/register-patient \
+  -H "Authorization: Bearer dummy_token" \
+  -F "patient_id=P001" \
+  -F "name=John Doe" \
+  -F "date_of_birth=1990-01-15" \
+  -F "medical_record_number=MRN123456" \
+  -F "consent_given=true" \
+  -F "image=@patient_photo.jpg"
+                    </div>
+
+                    <h3>Identify a Patient</h3>
+                    <div class="code-block" data-lang="bash">
+curl -X POST http://localhost:8001/identify-patient \
+  -H "Authorization: Bearer dummy_token" \
+  -F "image=@patient_photo.jpg" \
+  -F "session_id=checkin_001"
+                    </div>
+
+                    <h3>Update Consent</h3>
+                    <div class="code-block" data-lang="bash">
+curl -X POST http://localhost:8001/update-consent \
+  -H "Authorization: Bearer dummy_token" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "patient_id": "P001",
+    "consent_type": "genetic_screening",
+    "consent_given": true
+  }'
+                    </div>
+                </section>
+
+                <section id="security" class="section">
+                    <h2>🛡️ Security Features</h2>
+                    
+                    <h3>Data Encryption</h3>
+                    <ul>
+                        <li>AES-256 encryption for all patient data</li>
+                        <li>Encrypted facial embeddings storage</li>
+                        <li>Secure key management</li>
+                    </ul>
+
+                    <h3>Anti-spoofing Protection</h3>
+                    <ul>
+                        <li>Liveness detection algorithms</li>
+                        <li>3D face shape analysis</li>
+                        <li>Micro-movement detection</li>
+                    </ul>
+
+                    <h3>Privacy Compliance</h3>
+                    <ul>
+                        <li>HIPAA compliance for healthcare data</li>
+                        <li>GDPR compliance for EU patients</li>
+                        <li>Granular consent management</li>
+                        <li>Data retention policies</li>
+                    </ul>
+                </section>
+
+                <section id="deployment" class="section">
+                    <h2>🚀 Deployment</h2>
+                    
+                    <h3>Production Deployment</h3>
+                    <div class="code-block" data-lang="bash">
+# Install production dependencies
+pip install gunicorn
+
+# Run with Gunicorn
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app \
+  --bind 0.0.0.0:8001 \
+  --access-logfile - \
+  --error-logfile -
+                    </div>
+
+                    <h3>Docker Deployment</h3>
+                    <div class="code-block" data-lang="dockerfile">
+FROM python:3.9-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY . .
+EXPOSE 8001
+
+CMD ["python", "main.py"]
+                    </div>
+                </section>
+
+                <section id="troubleshooting" class="section">
+                    <h2>🔧 Troubleshooting</h2>
+                    
+                    <h3>Common Issues</h3>
+                    
+                    <h4>Server Won't Start</h4>
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> Port 8001 is already in use<br>
+                        <strong>Solution:</strong> Kill existing processes or use a different port
+                    </div>
+                    
+                    <h4>Face Detection Fails</h4>
+                    <div class="alert alert-info">
+                        <strong>Issue:</strong> No face detected in image<br>
+                        <strong>Solution:</strong> Ensure image has clear, well-lit face with minimal background
+                    </div>
+                    
+                    <h4>Database Connection Error</h4>
+                    <div class="alert alert-warning">
+                        <strong>Issue:</strong> Unable to open database file<br>
+                        <strong>Solution:</strong> Check file permissions and ensure data directory exists
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
