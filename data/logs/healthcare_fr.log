@@ -1,0 +1,100 @@
+2025-10-04 19:58:09,436 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 19:58:09,440 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 19:58:09,441 - src.privacy.encryption - WARNING - Please save this key securely: VzlhTjd4WlEyRWRtRWdvekxLRnJOYXF0dUxSUlB2LV9vUndTbGkyU3Rfcz0=
+2025-10-04 19:58:09,463 - src.privacy.consent_manager - ERROR - Failed to initialize consent database: unable to open database file
+2025-10-04 19:58:09,464 - main - ERROR - Failed to initialize system: unable to open database file
+2025-10-04 19:59:24,966 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 19:59:24,967 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 19:59:24,967 - src.privacy.encryption - WARNING - Please save this key securely: TkdYVV9CMTcxVjVpRmJnUk9hQmlFQVIwNU1tajhENnI3UlBtal9CZGUyND0=
+2025-10-04 19:59:24,986 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 19:59:25,148 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 19:59:25,154 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 19:59:25,155 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 19:59:26,528 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 19:59:26,531 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 19:59:26,541 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 19:59:26,541 - main - INFO - System components initialized successfully
+2025-10-04 19:59:26,559 - main - INFO - Shutting down Healthcare Face Recognition System...
+2025-10-04 19:59:26,559 - main - INFO - System shutdown complete
+2025-10-04 20:00:34,290 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:00:34,291 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:00:34,291 - src.privacy.encryption - WARNING - Please save this key securely: bkxzaHUxQnZmREhSRnk5d3lHeHdRcldxV3E4aUdJX2hZUlBsM0dMZ2E2ND0=
+2025-10-04 20:00:34,301 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:00:34,393 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:00:34,395 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:00:34,395 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:00:34,958 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:00:34,959 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:00:34,963 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:00:34,963 - main - INFO - System components initialized successfully
+2025-10-04 20:07:01,485 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:07:01,486 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:07:01,487 - src.privacy.encryption - WARNING - Please save this key securely: aWNDczlxRlkxejIzcnBfbG9ZWUJvOHF2VXlFT3VxemdiQVgzWEIxYUhmWT0=
+2025-10-04 20:07:01,500 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:01,555 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:07:01,556 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:07:01,556 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:07:02,361 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:07:02,362 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:07:02,364 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:02,364 - main - INFO - System components initialized successfully
+2025-10-04 20:07:10,086 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:07:10,088 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:07:10,088 - src.privacy.encryption - WARNING - Please save this key securely: YzMzRVVaaHRteFIwZUdzRGw2UEpwZUlfNTZZNzdQWlQ4YmJzNW9PbC1KVT0=
+2025-10-04 20:07:10,094 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:10,150 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:07:10,150 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:07:10,151 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:07:10,601 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:07:10,602 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:07:10,603 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:10,603 - main - INFO - System components initialized successfully
+2025-10-04 20:07:14,939 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:07:14,939 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:07:14,940 - src.privacy.encryption - WARNING - Please save this key securely: dTZvRUxRSEdGX3NxZG1NSGljZG9lWFdfa3o2UHZ5dTZUNm1rd2dDd2ZhMD0=
+2025-10-04 20:07:14,940 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:14,979 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:07:14,980 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:07:14,980 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:07:15,201 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:07:15,202 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:07:15,203 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:07:15,203 - main - INFO - System components initialized successfully
+2025-10-04 20:11:33,597 - src.privacy.consent_manager - INFO - Consent granted for patient P001, type genetic_screening
+2025-10-04 20:12:08,472 - src.privacy.consent_manager - INFO - Consent granted for patient P001, type genetic_screening
+2025-10-04 20:12:31,217 - src.privacy.consent_manager - INFO - Consent granted for patient P001, type genetic_screening
+2025-10-04 20:12:50,529 - main - INFO - Shutting down Healthcare Face Recognition System...
+2025-10-04 20:12:50,545 - main - INFO - System shutdown complete
+2025-10-04 20:28:05,116 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:28:05,117 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:28:05,117 - src.privacy.encryption - WARNING - Please save this key securely: VThTSWQ1REpDdDdyVkZmU0MxbUZfcHlCbzNNZ1hFUG55dGFRckdHODBHTT0=
+2025-10-04 20:28:05,152 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:28:05,230 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:28:05,231 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:28:05,231 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:28:05,805 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:28:05,806 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:28:05,807 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:28:05,807 - main - INFO - System components initialized successfully
+2025-10-04 20:29:05,080 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:29:05,084 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:29:05,084 - src.privacy.encryption - WARNING - Please save this key securely: NmV2QXEyaHdpLUI3WU5LYlRYMUZPcUVFd3d0RWFKR2NYeHU5TjZqU1Naaz0=
+2025-10-04 20:29:05,096 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:29:05,154 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:29:05,155 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:29:05,155 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:29:05,620 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:29:05,622 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:29:05,623 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:29:05,623 - main - INFO - System components initialized successfully
+2025-10-04 20:29:09,921 - main - INFO - Starting Healthcare Face Recognition System...
+2025-10-04 20:29:09,921 - src.privacy.encryption - WARNING - No encryption key provided in settings. Generated new key.
+2025-10-04 20:29:09,921 - src.privacy.encryption - WARNING - Please save this key securely: MTdvZWNwSG5NTTFnQ0JEWVNMTl9jUkhVeVNpTi1Ma1N6RWQwWHhXbjRZQT0=
+2025-10-04 20:29:09,923 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:29:09,989 - src.security.anti_spoofing - INFO - Liveness detection model loaded (placeholder)
+2025-10-04 20:29:09,990 - src.core.patient_identification - INFO - Database initialized successfully
+2025-10-04 20:29:09,990 - src.core.patient_identification - INFO - Face recognition model loaded successfully
+2025-10-04 20:29:10,469 - src.genetic_screening.genetic_analyzer - INFO - Genetic screening models loaded (placeholder)
+2025-10-04 20:29:10,470 - src.bias_detection.bias_monitor - INFO - Bias monitoring database initialized successfully
+2025-10-04 20:29:10,470 - src.privacy.consent_manager - INFO - Consent database initialized successfully
+2025-10-04 20:29:10,470 - main - INFO - System components initialized successfully
